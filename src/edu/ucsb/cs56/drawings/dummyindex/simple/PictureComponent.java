@@ -90,11 +90,15 @@ public class PictureComponent extends JComponent
 	
         // @@@ ADD CODE HERE TO DRAW THE TOP CIRCLE
 
-
-
+	Circle snowManTopCircle = 
+	    new Circle(
+	     snowManCenterBottomX,
+	     snowManCenterBottomY - bottomRadius * 2 - 2 * middleRadius - topRadius,
+	     topRadius
+		       );
         // @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	// @@@ 20, 20 are suggested coordinates, but you may change them
-
+	g2.draw( snowManTopCircle );
         // g2.drawString("Description and your name go here", 20,20);
 	
     }
