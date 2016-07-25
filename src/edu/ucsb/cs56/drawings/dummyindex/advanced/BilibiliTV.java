@@ -7,14 +7,14 @@ import edu.ucsb.cs56.drawings.utilities.ShapeTransforms;
 /**
    A House
       
-   @author Phill Conrad 
+   @author DummyIndex
    @version for CS56, W16, UCSB
    
 */
 public class BilibiliTV extends TVSkeleton implements Shape
 {
     /**
-     * Constructor for objects of class CoffeeCup
+     * Constructor for objects of class BILIBILITV
      */
     public BilibiliTV(double x, double y, double width, double height)
     {
@@ -55,13 +55,35 @@ public class BilibiliTV extends TVSkeleton implements Shape
 	rightEye.lineTo( rightEye_X + rightEye_OFFSET_X ,
 			 rightEye_Y + rightEye_OFFSET_Y );
 	
+	//////////////////////////////////////////////////
+	//mouse
+	final double horiz_dist = 25 ;
+	final double vert_dist = 40;
+	final double start_x = SMALLER_X +  ( SMALLER_WIDTH -  4 * horiz_dist ) / 2;
+	final double start_y = SMALLER_Y + SMALLER_HEIGHT / 32 * 20 ;
+	
+	GeneralPath mouse = new GeneralPath();
+	mouse.moveTo( start_x, start_y );
+	for( int i  = 0 ; i < 4 ; ++i ){
+	    double next_x = start_x + horiz_dist * (i+1)  ;
+	    double next_y = start_y + ( i % 2 == 0 ? vert_dist : 0 );
+	    mouse.lineTo( next_x, next_y );
+	}
+	//////////////////////////////////////////////////
+
+
+
 	    
 	GeneralPath wholeTV = new GeneralPath();
         GeneralPath expression = new GeneralPath();
 	expression.append( leftEye, false);
 	expression.append( rightEye, false );
+	expression.append( mouse, false );
 	wholeTV.append(tv_skeleton, false);
 	wholeTV.append( expression , false );
+       
+
+
 	//Shape s = ShapeTransforms.translatedCopyOf(expression, 0, 0);
         Shape s = ShapeTransforms.translatedCopyOf(wholeTV, -ORIG_ULX + x, -ORIG_ULY + y);
 	
