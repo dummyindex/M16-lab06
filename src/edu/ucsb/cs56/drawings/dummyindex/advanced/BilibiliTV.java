@@ -15,6 +15,8 @@ public class BilibiliTV extends TVSkeleton implements Shape
 {
     /**
      * Constructor for objects of class BILIBILITV
+     * x-pattern's x coordinate y-pattern's y coordinate
+     * width- pattern's width, heigh- pattern's height 
      */
     public BilibiliTV(double x, double y, double width, double height)
     {
