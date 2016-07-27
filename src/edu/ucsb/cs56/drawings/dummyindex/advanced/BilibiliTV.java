@@ -8,7 +8,7 @@ import edu.ucsb.cs56.drawings.utilities.ShapeTransforms;
    A House
       
    @author DummyIndex
-   @version for CS56, W16, UCSB
+   @version for CS56, M16, UCSB
    
 */
 public class BilibiliTV extends TVSkeleton implements Shape

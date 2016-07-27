@@ -9,7 +9,7 @@ import edu.ucsb.cs56.drawings.utilities.GeneralPathWrapper;
 /**
    A bilibili TV Skeleton
    @author DummyIndex
-   @version for CS56, W16, UCSB
+   @version for CS56, M16, UCSB
 
  */
 public class TVSkeleton extends GeneralPathWrapper implements Shape
